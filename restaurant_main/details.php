@@ -25,11 +25,8 @@ if(!empty($_SESSION['codCli'])){
 $sql_obtener_cantidad = "SELECT cantCar FROM carrito WHERE codCli = '$id_user' AND codProd = '$idProd'";
 $resultado_obtener_cantidad = $conector->query($sql_obtener_cantidad);
 
-if ($resultado_obtener_cantidad->num_rows > 0) {
-    $fila_cantidad = $resultado_obtener_cantidad->fetch_assoc();
-    $cantidad_actual = $fila_cantidad['cantCar'];
 }
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -110,10 +107,10 @@ if ($resultado_obtener_cantidad->num_rows > 0) {
 	                <p class="text-justify lead" style="padding: 40px 0;">
 	                    <span class="text-info lead font-weight-bold">Descripción:</span><br>
 	                    <?php echo  $row['descripcion']; ?>
+						<p class="lead font-weight-bold"><?php echo '$'. $row['precio'].' '.'USD'; ?>
 	                </p>
-
-	                <p class="lead font-weight-bold"><?php echo '$'. $row['precio'].' '.'USD'; ?>
-
+					<span class="text-info lead font-weight-bold">Stock:</span>
+					<p class="lead font-weight-bold"><?php echo ''. $row['stok'].' '.''; ?>
 	                <!-- Agregar al carrito 
 	                <form action="" style="padding-top: 70px;">
 	                    <div class="container-fluid">
