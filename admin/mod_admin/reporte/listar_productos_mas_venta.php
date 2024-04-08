@@ -47,34 +47,47 @@ if (!empty($_SESSION['codUsu'])) {
 
 <body>
 <div class="wrapper-page">
-    <center><strong>RELACIÓN DE Productos mas Vendidas</strong></center>
+    <center><strong>Reporte Ventas</strong></center>
     <hr>
     <table>
         <thead>
         <tr>
             <th>Nro</th>
-            <th>Producto</th>
-            <th>Cantidad</th>
+            <th>Cliente</th>
+            <th>Pedido</th>
+            <th>cantidad</th>
+            <th>Precio Cantidad</th>
         </tr>
         </thead>
         <tbody>
         <?php
-        $sql = "SELECT pr.idProd, pr.nomProd, COUNT(dp.codProd) AS total_ventas, SUM(dp.cantProd) AS cantidad_total
-        FROM producto pr
-        INNER JOIN detalle_pedido dp ON pr.idProd = dp.codProd
-        GROUP BY pr.idProd, pr.nomProd
-        ORDER BY cantidad_total DESC
-        LIMIT 5;         ";
-        $query = $conector->query($sql);
-        $i = 1;
-        while ($fila = $query->fetch_array()) {
-            echo '<tr>';
-            echo '<td>' . $i . '</td>';
-            echo '<td>' . $fila['nomProd'] . '</td>';
-            echo '<td>' . $fila['cantidad_total'] . '</td>';
-            echo '</tr>';
-            $i++;
-        }
+ $sql = "SELECT c.nomCli AS nomUsu, p.nomProd, SUM(dp.cantProd) AS cantidad_total, SUM(dp.totalProd) AS costo_total
+ FROM cliente c
+ INNER JOIN pedido pe ON c.codCli = pe.codCli
+ INNER JOIN detalle_pedido dp ON pe.codPedi = dp.codPedi
+ INNER JOIN producto p ON dp.codProd = p.idProd
+ GROUP BY c.nomCli, p.nomProd
+ ORDER BY cantidad_total DESC
+ LIMIT 5;";
+$query = $conector->query($sql);
+$i = 1;
+$total_costo = 0; // Variable para almacenar el costo total de todos los productos vendidos
+while ($fila = $query->fetch_array()) {
+    echo '<tr>';
+    echo '<td>' . $i . '</td>';
+    echo '<td>' . $fila['nomUsu'] . '</td>';
+    echo '<td>' . $fila['nomProd'] . '</td>';
+    echo '<td>' . $fila['cantidad_total'] . '</td>';
+    echo '<td>' . $fila['costo_total'] . '</td>';
+    echo '</tr>';
+    $i++;
+    $total_costo += $fila['costo_total']; // Suma el costo total de cada producto
+}
+// Agrega una fila al final de la tabla para mostrar el costo total de todos los productos vendidos
+echo '<tr>';
+echo '<td colspan="4"><strong>Costo total: </strong></td>';
+echo '<td>' . $total_costo . '</td>'; // Muestra el costo total
+echo '</tr>';
         ?>
         </tbody>
     </table>

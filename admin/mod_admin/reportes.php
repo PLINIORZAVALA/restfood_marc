@@ -29,7 +29,7 @@
                     <div id="page-content">
                         <!-- Dashboard Header -->
                         <!-- For an image header add the class 'content-header-media' and an image as in the following example -->
-                        <div class="content-header content-header-media">
+                        <div class="">
                             <div class="header-section">
                                 <div class="row">
                                     <!-- Main Title (hidden on small devices for the statistics to fit) -->
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <!-- For best results use an image with a resolution of 2560x248 pixels (You can also use a blurred image with ratio 10:1 - eg: 1000x100 pixels - it will adjust and look great!) -->
-                            <img src="img/placeholders/headers/dashboard_header.jpg" alt="header image" class="animation-pulseSlow">
+                            <img src="">
                         </div>
                         <!-- END Dashboard Header -->
 
@@ -81,7 +81,7 @@
                                             <i class="fa fa-user"></i>
                                         </div>
                                         <h3 class="widget-content text-right animation-pullDown">
-                                            Relacion de <strong>Productos Top 5</strong><br>
+                                            Relacion de: <strong>Reporte de ventas</strong><br>
                                             <small>General</small>
                                         </h3>
                                     </div>

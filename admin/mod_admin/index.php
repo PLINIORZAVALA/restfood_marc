@@ -29,13 +29,14 @@
                     <div id="page-content">
                         <!-- Dashboard Header -->
                         <!-- For an image header add the class 'content-header-media' and an image as in the following example -->
-                        <div class="content-header content-header-media">
-                            <div class="header-section">
+                        <div class="content-header ">
+                            <div class="header-section ">
                                 <div class="row">
                                     <!-- Main Title (hidden on small devices for the statistics to fit) -->
-                                    <div class="col-md-4 col-lg-6 hidden-xs hidden-sm">
-                                        <h1>Bienvenido <strong>Administrado</strong><br><small>Buen dia </small></h1>
+                                    <div class="col-md-6 col-lg-6 hidden-xs hidden-sm">
+                                        <h1 style="font-size: 24px; font-weight: bold;">Bienvenido <strong>Administrador</strong><br><small>Buen día</small></h1>
                                     </div>
+
                                     <!-- END Main Title -->
 
                                     <!-- Top Stats -->
@@ -82,21 +83,21 @@
                             <div class="col-sm-6 col-lg-3">
                                 <!-- Widget -->
                                 <a href="usuarios.php" class="widget widget-hover-effect1">
-                                    <div class="widget-simple" style="background-color: #32F481;"> <!-- Cambiando el fondo al color #32F481 -->
-                                        <h3 class="box-title"><strong>Usuarios</strong></h3>
-                                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
-                                            <i class="fa fa-users"></i>
-                                        </div>
-                                        <h3 class="widget-content text-right animation-pullDown">
-                                            <?php
-                                                $sql = "SELECT * FROM usuario WHERE priUsu=1";
-                                                $consulta = $conector->query($sql);
-                                                $total_user = $consulta->num_rows;
-                                            ?>
-                                                <strong><?php echo $total_user;?></strong><br>
-                                            <small>Usuarios Registrados</small>
-                                        </h3>
+                                <div class="widget-simple" style="background-color: #85929E;"> <!-- Cambiando el fondo al color #32F481 -->
+                                    <h3 class="box-title"><strong style="color: white;">Usuarios</strong></h3>
+                                    <div class="widget-icon pull-left themed-background animation-fadeIn" style="background-color: #85C1E9;" >
+                                        <i class="fa fa-users" style="color: black;"></i>
                                     </div>
+                                    <h3 class="widget-content text-right animation-pullDown" style="color: white;">
+                                        <?php
+                                        $sql = "SELECT * FROM usuario WHERE priUsu=1";
+                                        $consulta = $conector->query($sql);
+                                        $total_user = $consulta->num_rows;
+                                        ?>
+                                        <strong><?php echo $total_user;?></strong><br>
+                                        <small style="font-size: 100%; color: white;">Usuarios Registrados</small>
+                                    </h3>
+                                </div>
                                 </a>
                                 <!-- END Widget -->
                             </div>
@@ -104,40 +105,41 @@
                             <div class="col-sm-6 col-lg-3">
                                 <!-- Widget -->
                                 <a href="clientes.php" class="widget widget-hover-effect1">
-                                    <div class="widget-simple "style="background-color: #E6EE47;"> <!-- Cambiando el fondo al color #32F481 -->
-                                        <h3 class="box-title"><strong> Clientes</strong></h3>
-                                        <div class="widget-icon pull-left themed-background-amethyst animation-fadeIn">
-                                            <i class="fa fa-user-circle-o"></i>
+                                    <div class="widget-simple " style="background-color: #85929E;"> <!-- Cambiando el fondo al color #28a745 (verde claro) -->
+                                        <h3 class="box-title"><strong style="color: white;"> Clientes</strong></h3>
+                                        <div class="widget-icon pull-left  themed-background animation-fadeIn" style="background-color: #85C1E9;"> 
+                                            <i class="fa fa-user-circle-o" style="color: black;"></i>
                                         </div>
-                                        <h3 class="widget-content text-right animation-pullDown">
-                                        <?php
-                                                $sql = "SELECT * FROM cliente";
-                                                $consulta = $conector->query($sql);
-                                                $total_user = $consulta->num_rows;
+                                        <h3 class="widget-content text-right animation-pullDown" style="color: white;">
+                                            <?php
+                                            $sql = "SELECT * FROM cliente";
+                                            $consulta = $conector->query($sql);
+                                            $total_user = $consulta->num_rows;
                                             ?>
-                                                <strong><?php echo $total_user;?></strong><br>
-                                            <small>Clientes Registrados</small>
+                                            <strong><?php echo $total_user;?></strong><br>
+                                            <small style="font-size: 100%; color: white;">Clientes Registrados</small>
                                         </h3>
                                     </div>
                                 </a>
+
                                 <!-- END Widget -->
                             </div>
                             <div class="col-sm-6 col-lg-3 ">
                                 <!-- Widget -->
                                 <a href="productos.php" class="widget widget-hover-effect1">
-                                    <div class="widget-simple "style="background-color: #EE47B6;"> <!-- Cambiando el fondo al color #32F481 -->
-                                        <h3 class="box-title"><strong>Productos</strong></h3>
-                                        <div class="widget-icon pull-left themed-background animation-fadeIn">
-                                            <i class="fa fa-cutlery"></i>
+                                    <div class="widget-simple "style="background-color: #85929E;"> <!-- Cambiando el fondo al color #32F481 -->
+                                        <h3 class="box-title"><strong  style="color: white;" >Productos</strong></h3>
+                                        <div class="widget-icon pull-left themed-background animation-fadeIn" style="background-color: #85C1E9;">
+                                            <i class="fa fa-cutlery"  style="color: black;"></i>
                                         </div>
-                                        <h3 class="widget-content text-right animation-pullDown">
+                                        <h3 class="widget-content text-right animation-pullDown"  style="color: white;">
                                         <?php
                                                 $sql = "SELECT * FROM producto";
                                                 $consulta = $conector->query($sql);
                                                 $total_user = $consulta->num_rows;
                                             ?>
                                                 <strong><?php echo $total_user;?></strong><br>
-                                            <small>Productos Registrados</small>
+                                            <small style="font-size: 100%; color: white;">Productos Registrados</small>
                                         </h3>
                                     </div>
                                 </a>
@@ -146,19 +148,19 @@
                             <div class="col-sm-6 col-lg-3 ">
                                 <!-- Widget -->
                                 <a href="pedidos.php" class="widget widget-hover-effect1">
-                                    <div class="widget-simple "style="background-color: #0D7806;"> <!-- Cambiando el fondo al color #32F481 -->
-                                        <h3 class="box-title"><strong>Pedidos</strong></h3>
-                                        <div class="widget-icon pull-left themed-background animation-fadeIn">
-                                            <i class="fa fa-cutlery"></i>
+                                    <div class="widget-simple "style="background-color: #85929E;"> <!-- Cambiando el fondo al color #32F481 -->
+                                        <h3 class="box-title"><strong style="color: white;">Pedidos</strong></h3>
+                                        <div class="widget-icon pull-left themed-background animation-fadeIn" style="background-color: #85C1E9;">
+                                            <i class="fa fa-cutlery"  style="color: black;"></i>
                                         </div>
-                                        <h3 class="widget-content text-right animation-pullDown">
+                                        <h3 class="widget-content text-right animation-pullDown"  style="color: white;">
                                         <?php
                                                 $sql = "SELECT * FROM pedido WHERE estado <='2'";
                                                 $consulta = $conector->query($sql);
                                                 $total_user = $consulta->num_rows;
                                             ?>
                                                 <strong><?php echo $total_user;?></strong><br>
-                                            <small>Pedido Realizados</small>
+                                            <small style="font-size: 100%; color: white; " >Pedido Realizados</small>
                                         </h3>
                                     </div>
                                 </a>
@@ -167,19 +169,19 @@
                             <div class="col-sm-6 col-lg-3">
                                 <!-- Widget -->
                                 <a href="categorias.php" class="widget widget-hover-effect1">
-                                    <div class="widget-simple "style="background-color: #EE7247;"> <!-- Cambiando el fondo al color #32F481 -->
-                                        <h3 class="box-title"><strong>Categoria</strong></h3>
-                                        <div class="widget-icon pull-left themed-background-amethyst animation-fadeIn">
-                                            <i class="fa fa-align-justify"></i>
+                                    <div class="widget-simple" style="background-color: #85929E;">
+                                        <h3 class="box-title"><strong style="color: white;">Categoria</strong></h3>
+                                        <div class="widget-icon pull-left themed-background animation-fadeIn" style="background-color: #85C1E9;">
+                                            <i class="fa fa-align-justify" style="color: black;"></i>
                                         </div>
-                                        <h3 class="widget-content text-right animation-pullDown">
-                                        <?php
+                                        <h3 class="widget-content text-right animation-pullDown" style="color: white;">
+                                            <?php
                                                 $sql = "SELECT * FROM categoria";
                                                 $consulta = $conector->query($sql);
                                                 $total_user = $consulta->num_rows;
                                             ?>
-                                                <strong><?php echo $total_user;?></strong><br>
-                                            <small>Categorias Registrados</small>
+                                            <strong><?php echo $total_user;?></strong><br>
+                                            <small style="font-size: 100%; color: white;">Categorias Registrados</small>
                                         </h3>
                                     </div>
                                 </a>
