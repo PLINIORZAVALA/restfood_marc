@@ -28,13 +28,24 @@ if(!empty($_SESSION['codCli'])){
 	// Obtén la cantidad actual del producto en el carrito desde la base de datos
 	$sql_obtener_cantidad = "SELECT cantCar FROM carrito WHERE codCli = '$id_user' AND codProd = '$idProd'";
 	$resultado_obtener_cantidad = $conector->query($sql_obtener_cantidad);
-	if($resultado_obtener_cantidad<1){
-		echo 'Estock agtado';
-	}else{
-		//Disminución del Stock
-		$row['stok'] -= $_SESSION['stock'] ;
-		//Almacenamos la cantidad de diminuciones
-		$cantida_upd = 3;
+	
+	// Verificar si se obtuvo un resultado
+	if ($resultado_obtener_cantidad) {
+		// Obtener la cantidad del resultado
+		$cantidad_en_carrito = $resultado_obtener_cantidad->fetch_assoc()['cantCar'];
+
+		// Calcular el nuevo stock
+		$nuevo_stock = $row['stok'] - $cantidad_en_carrito;
+
+		// Actualizar el stock en la base de datos
+		$sql_actualizar_stock = "UPDATE productos SET stok = '$nuevo_stock' WHERE idProd = '$idProd'";
+		if ($conector->query($sql_actualizar_stock)) {
+			echo "Stock actualizado correctamente.";
+		} else {
+			echo "Error al actualizar el stock: " . $conector->error;
+		}
+	} else {
+		echo "Error al obtener la cantidad del carrito: " . $conector->error;
 	}
 }
 

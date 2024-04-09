@@ -81,40 +81,24 @@ if ($resultado_obtener_cantidad->num_rows > 0) {
 			</figure>
 
 			<!-- Galery -->
-			<h5 class="poppins-regular text-uppercase" style="padding-top: 70px;">Galería de imágenes</h5>
+			<h5 class="poppins-regular text-uppercase" style="padding-top: 70px;">Descripción detallada</h5>
 			<hr>
 			<div class="galery-details full-box">
-        
-            <!--cover-->
-            <figure class="full-box">
-                <a data-fslightbox="gallery" href="admin/<?php echo $imagenUrl; ?>">
-                    <img class="img-fluid" src="admin/<?php echo $imagenUrl; ?>" alt="platillo_">
-                </a>
-            </figure>
-
-            <!--otras-->
-            <figure class="full-box">
-                <a data-fslightbox="gallery" href="admin/<?php echo $imagenUrl2; ?>">
-                    <img class="img-fluid" src="admin/<?php echo $imagenUrl2; ?>" alt="platillo_">
-                </a>
-            </figure>
-
-            <figure class="full-box">
-                <a data-fslightbox="gallery" href="admin/<?php echo $imagenUrl3; ?>">
-                    <img class="img-fluid" src="admin/<?php echo $imagenUrl3; ?>" alt="platillo_">
-                </a>
-            </figure>
+			
+			<h5 class="text-justify"><?php echo $row['descripcion']; ?></h5>           
+			
     </div>
 	        </div>
 	        <div class="col-12 col-lg-7">
                 <h4 class="font-weight-bold poppins-regular tittle-details"><?php echo $row['nomProd']; ?></h4>
 
-	                <p class="text-justify lead" style="padding: 40px 0;">
+					<p class="text-justify lead" style="padding: 40px 0;">
 	                    <span class="text-info lead font-weight-bold">Descripción:</span><br>
-	                    <?php echo  $row['descripcion']; ?>
+	                    <?php echo  $row['nomProd']; ?>
+						<p class="lead font-weight-bold"><?php echo '$'. $row['precio'].' '.'USD'; ?>
 	                </p>
-
-	                <p class="lead font-weight-bold"><?php echo '$'. $row['precio'].' '.'USD'; ?>
+					<span class="text-info lead font-weight-bold">Stock:</span>
+					<p class="lead font-weight-bold"><?php echo ''. $row['stok'].' '.''; ?>
 
 	                <!-- Agregar al carrito 
 	                <form action="" style="padding-top: 70px;">
