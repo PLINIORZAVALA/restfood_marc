@@ -78,7 +78,7 @@
                                             <a href="#" class="btn btn-alt btn-sm btn-primary" 
                                                 data-toggle="modal" data-target="#modal-InsertUsuario" 
                                                 title="Nuevo Registro Usuario">
-                                             <i  class="fa fa-plus"></i> Nuevo
+                                                <i  class="fa fa-file"></i>  Nuevo
                                              </a>
                                             </div>
                                             <h2><strong>Usuarios</strong> Registrados</h2>
@@ -137,8 +137,8 @@
                                             <div class="col-md-12" id="div_insert_user"></div>
                                             <div class="form-group form-actions">
                                                 <div class="col-md-12 text-center">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal"> <i class="fa fa-times-circle-o"></i> Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary">Guardar <i class="fa fa-floppy-o"></i> </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -195,8 +195,8 @@
                                             <div class="col-md-12" id="div_upd_user"></div>
                                             <div class="form-group form-actions">
                                                 <div class="col-md-12 text-center">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal"> <i class="fa fa-times-circle-o"></i> Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary"> <i class="fa fa-pencil-square"></i> Actualizar</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -229,8 +229,8 @@
                                             <div class="col-md-12" id="div_est_user"></div>
                                             <div class="form-group form-actions">
                                                 <div class="col-md-12 text-center">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal"> <i class="fa fa-times-circle-o"></i> Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary"> <i class="fa fa-pencil-square"></i>  Actualizar</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -259,8 +259,8 @@
                                             <div class="col-md-12" id="div_del_user"></div>
                                             <div class="form-group form-actions">
                                                 <div class="col-md-12 text-center">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                    <button type="submit" class="btn btn-primary">Eliminar</button>
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal"> <i class="fa fa-times-circle-o"></i> Cancelar</button>
+                                                    <button type="submit" class="btn btn-primary"> <i class="fa fa-trash"></i> Eliminar</button>
                                                 </div>
                                             </div>
                                         </form>
